@@ -6,31 +6,30 @@ html {
 }
 
 body {
-  margin: 0 auto;
-  padding: auto;
+  margin: 0;
+  padding: 0;
   background-color: rgb(19, 24, 44);
+  font-family: "Poppins", sans-serif;
 }
-/* heading */
+
+/* Heading */
 h1 {
   color: #fff;
   text-transform: uppercase;
-  text-decoration: none;
   letter-spacing: 0.15em;
   text-align: center;
   padding: 15px 20px;
   position: relative;
 }
 h1:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
   content: "";
-  display: block;
-  height: 2px;
-  left: 50%;
   position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  bottom: 0;
+  left: 50%;
   width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease, left 0.3s ease;
 }
 h1:hover:after {
   width: 100%;
@@ -40,49 +39,40 @@ h1:hover:after {
 .styles {
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
-  margin-top: 4vmin;
+  margin: 4vmin auto;
   flex-wrap: wrap;
-  /* flex-direction: column; */
 }
 
 .stylebox {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   background-color: rgb(245, 217, 217);
   padding: 1rem;
   text-align: center;
-  font-family: "Poppins", sans-serif;
   margin: 1.5rem;
   border-radius: 0.5rem;
-  border: none;
   width: 15rem;
   justify-content: center;
-  transition: 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .stylebox:hover {
-  transform: scale(1.02);
-  -webkit-box-shadow: 0 0 10px 2px rgba(26, 1, 253, 0.42);
-  -moz-box-shadow: 0 0 10px 2px rgba(26, 1, 253, 0.42);
-  box-shadow: 0 0 10px 2px rgba(26, 1, 253, 0.42);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(26, 1, 253, 0.5);
 }
 .stylebox .image {
   width: 15rem;
   height: 13rem;
 }
 .stylebox .image img {
-  background-size: cover;
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
-  image-rendering: pixelated;
+  object-fit: cover;
 }
 .stylebox p {
   text-align: left;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 .stylebox .btn-group {
   display: flex;
@@ -90,15 +80,13 @@ h1:hover:after {
   gap: 1rem;
 }
 .stylebox a {
-  background-color: white;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 1vmin;
-  font-size: 1.2rem;
   background-color: rgb(89, 0, 131);
-  color: rgb(255, 255, 255);
+  color: #fff;
   text-decoration: none;
-  transition: 0.2s;
+  padding: 1vmin;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s, transform 0.2s;
   width: 100%;
 }
 .stylebox a.code {
@@ -114,27 +102,15 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .styles {
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0 auto;
-    margin-top: 4vmin;
   }
   .stylebox {
+    width: 18rem;
     padding: 0.5rem;
-    margin: auto;
-    width: 18rem;
-    margin-bottom: 1.5rem;
-  }
-  .stylebox .image {
-    width: 18rem;
-    height: 12rem;
-    border-radius: 0.5rem;
   }
 }
 
-/* scroll top starts */
+/* Scroll Top */
 #scroll-top {
   position: fixed;
   right: 1rem;
@@ -148,16 +124,13 @@ a:hover {
   text-decoration: none;
 }
 #scroll-top:hover {
-  -webkit-box-shadow: 0 0 10px 2px rgba(26, 1, 253, 0.42);
-  -moz-box-shadow: 0 0 10px 2px rgba(26, 1, 253, 0.42);
-  box-shadow: 0 0 10px 2px rgba(26, 1, 253, 0.42);
+  box-shadow: 0 0 10px rgba(26, 1, 253, 0.5);
 }
 #scroll-top.active {
   bottom: 5px;
 }
-/* scroll top ends */
 
-/* CSS for NavBar starts */
+/* NavBar */
 .topnav {
   background-color: rgb(19, 24, 44);
   overflow: hidden;
@@ -172,17 +145,14 @@ a:hover {
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: #04aa6d;
   color: white;
 }
-
 .topnav .icon {
   display: none;
 }
@@ -196,7 +166,6 @@ a:hover {
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {
     position: relative;
@@ -212,5 +181,3 @@ a:hover {
     text-align: left;
   }
 }
-
-/* CSS for NavBar end */
